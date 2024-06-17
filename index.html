@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="game.js" defer></script>
+    <title>Fighting Game</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .hp-bars {
+        position: absolute;
+        width: 90%;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 120px;
+        display: grid;
+        grid-template-columns: 45% 10% 45%;
+        & .player-hp-bg,
+        .enemy-hp-bg {
+          width: 100%;
+          height: 50%;
+          margin: auto;
+          background: #fff1;
+          background: blue;
+          position: relative;
+        }
+        & .player-hp-bg {
+          display: flex;
+          justify-content: flex-end;
+        }
+        & div > div {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background: yellow;
+        }
+        & .timer {
+          width: 100%;
+          height: 100%;
+          background: red;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hp-bars">
+      <!-- Player -->
+      <div class="player-hp-bg">
+        <div class="player-hp" id="player-1"></div>
+      </div>
+      <div class="timer"></div>
+      <div class="enemy-hp-bg">
+        <div class="enemy-hp" id="player-2"></div>
+      </div>
+    </div>
+    <canvas id="canvas"></canvas>
+  </body>
+</html>
